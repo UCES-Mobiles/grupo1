@@ -5,3 +5,4 @@ Barbieri, Mariano
 Gatti, Gaspar
 Zamora, Damian Pablo
 
+Agregar diagrama UML y de flujo
