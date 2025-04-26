@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/EstadoPedido.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/META-INF/grupo1.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Pedido$WhenMappings.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Producto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +31,9 @@
     &quot;accountId&quot;: &quot;abf1f032-f314-4f1a-a5c4-c13dfa3a0134&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>

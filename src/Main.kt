@@ -7,7 +7,7 @@ fun main() {
     // Cargamos algunos productos al menú
     agregarProducto(Producto(1, "Empanada", 500.0, 0.0, TipoProducto.ENTRADA))
     agregarProducto(Producto(2, "Milanesa con papas", 2000.0, 0.0, TipoProducto.PLATO_PRINCIPAL))
-    agregarProducto(Producto(3, "Helado", 700.0, 0.0, TipoProducto.POSTRE,))
+    agregarProducto(Producto(3, "Helado", 700.0, 0.0, TipoProducto.POSTRE))
     agregarProducto(Producto(4, "Gaseosa", 400.0, 0.0, TipoProducto.BEBIDA))
 
     // Cargamos un par de clientes
@@ -123,11 +123,78 @@ fun logIn(scanner: Scanner) {
     val cliente = buscarClientePorNombre(nombre)
     if (cliente != null) {
         println("¡Bienvenido, ${cliente.nombre}!")
+        if (cliente.esAdmin) {
+            menuAdmin(scanner)
+        } else {
+            // -- FALTA HACER MENÚ CLIENTE --
+        }
     } else {
         println("Usuario no encontrado. ¿Desea crearlo? (s/n)")
         if (scanner.nextLine().lowercase() == "s") {
             crearUsuario(scanner)
         }
+    }
+}
+
+// Menú de Admin:
+
+fun menuAdmin(scanner: Scanner) {
+    while (true) {
+        println(
+            """
+            |--- Menú Admin ---
+            |1. Agregar Producto
+            |2. Modificar Producto
+            |3. Ver Productos
+            |4. Volver al menú principal
+            |Seleccione una opción:
+            """.trimMargin()
+        )
+
+        when (scanner.nextLine()) {
+            "1" -> {
+                println("Nombre del producto:")
+                val nombre = scanner.nextLine()
+                println("Precio:")
+                val precio = scanner.nextLine().toDouble()
+                println("Tipo (ENTRADA, PLATO_PRINCIPAL, POSTRE, BEBIDA):")
+                val tipo = TipoProducto.valueOf(scanner.nextLine().uppercase())
+                println("Porcentaje de descuento (0 si no tiene):")
+                val descuento = scanner.nextLine().toDoubleOrNull() ?: 0.0
+
+                val nuevoId = (Repositorio.productos.maxByOrNull { it.id }?.id ?: 0) + 1
+                agregarProducto(Producto(nuevoId, nombre, precio, descuento, tipo))
+                println("Producto agregado.")
+            }
+            "2" -> {
+                println("ID del producto a modificar:")
+                val id = scanner.nextLine().toInt()
+                println("Nuevo nombre:")
+                val nuevoNombre = scanner.nextLine()
+                println("Nuevo precio:")
+                val nuevoPrecio = scanner.nextLine().toDouble()
+                modificarProducto(id, nuevoNombre, nuevoPrecio)
+            }
+            "3" -> {
+                println("Productos actuales:")
+                Repositorio.productos.forEach { println(it) }
+            }
+            "4" -> return
+            else -> println("Opción inválida.")
+        }
+    }
+}
+
+// Funciones de Gestiones de Productos:
+
+fun modificarProducto(id: Int, nuevoNombre: String, nuevoPrecio: Double) {
+    val prod = Repositorio.productos.find { it.id == id }
+    if (prod == null) {
+        println("No se encontró el producto con ID $id")
+    } else {
+        prod.nombre = nuevoNombre
+        prod.precio = nuevoPrecio
+        println("Producto con ID $id modificado exitosamente.")
     }
 }
 
