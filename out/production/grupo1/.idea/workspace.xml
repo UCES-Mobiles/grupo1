@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora/.idea/grupo1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora/1er parcial moviles1 - Barbieri-Gatti-Zamora.iml" beforeDir="false" afterPath="$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;damianzamora&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/UCES-Mobiles/grupo1.git&quot;,
+    &quot;accountId&quot;: &quot;abf1f032-f314-4f1a-a5c4-c13dfa3a0134&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2wF52e2rVfquza5h1ie6VMVG4cL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Unnamed.executor": "Run",
+    "Kotlin.Main.executor": "Run",
+    "Kotlin.MainKt (1).executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.Unnamed.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "dzamora",
+    "last_opened_file_path": "C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1",
+    "settings.editor.selected.configurable": "com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\damia.DAMIAKD\OneDrive\Escritorio\UCES\Mobiles 1\grupo1\1er parcial moviles1 - Barbieri-Gatti-Zamora" />
+      <recent name="C:\Users\damia.DAMIAKD\OneDrive\Escritorio\UCES\Mobiles 1\grupo1" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="grupo1" />
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-24" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="grupo1" />
+      <shortenClasspath name="MANIFEST" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="" />
+      <created>1745624275808</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745624275808</updated>
+    </task>
+    <servers />
+  </component>
+</project>
