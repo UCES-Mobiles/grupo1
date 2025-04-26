@@ -117,23 +117,28 @@ fun crearUsuario(scanner: Scanner) {
 // funcion de login
 
 fun logIn(scanner: Scanner) {
-    println("Ingrese su nombre de usuario:")
-    val nombre = scanner.nextLine()
-
-    val cliente = buscarClientePorNombre(nombre)
-    if (cliente != null) {
-        println("¡Bienvenido, ${cliente.nombre}!")
-        if (cliente.esAdmin) {
-            menuAdmin(scanner)
-        } else {
-            // -- FALTA HACER MENÚ CLIENTE --
-        }
+    println("Ingrese su id de usuario:")
+    val idInput = scanner.nextLine()
+    val id = idInput.toIntOrNull()
+    if (id == null) {
+        println("ID inválido.")
     } else {
-        println("Usuario no encontrado. ¿Desea crearlo? (s/n)")
-        if (scanner.nextLine().lowercase() == "s") {
-            crearUsuario(scanner)
+        val cliente = buscarClientePorId(id)
+        if (cliente != null) {
+            println("¡Bienvenido, ${cliente.nombre}!")
+            if (cliente.esAdmin) {
+                menuAdmin(scanner)
+            } else {
+                // -- FALTA HACER MENÚ CLIENTE --
+            }
+        } else {
+            println("Usuario no encontrado. ¿Desea crearlo? (s/n)")
+            if (scanner.nextLine().lowercase() == "s") {
+                crearUsuario(scanner)
+            }
         }
     }
+
 }
 
 // Menú de Admin:
@@ -146,45 +151,126 @@ fun menuAdmin(scanner: Scanner) {
             |1. Agregar Producto
             |2. Modificar Producto
             |3. Ver Productos
-            |4. Volver al menú principal
+            |4. Ver Clientes
+            |5. Buscar Cliente
+            |6. Eliminar Cliente
+            |7. Volver al menú principal
             |Seleccione una opción:
             """.trimMargin()
         )
 
-        when (scanner.nextLine()) {
+        when (scanner.nextLine().trim()) {
             "1" -> {
                 println("Nombre del producto:")
                 val nombre = scanner.nextLine()
+
                 println("Precio:")
-                val precio = scanner.nextLine().toDouble()
+                val precioInput = scanner.nextLine()
+                val precio = precioInput.toDoubleOrNull()
+                if (precio == null) {
+                    println("Precio inválido.")
+                    continue
+                }
+
                 println("Tipo (ENTRADA, PLATO_PRINCIPAL, POSTRE, BEBIDA):")
-                val tipo = TipoProducto.valueOf(scanner.nextLine().uppercase())
+                val tipoInput = scanner.nextLine()
+                val tipo = try {
+                    TipoProducto.valueOf(tipoInput.uppercase())
+                } catch (e: Exception) {
+                    println("Tipo de producto inválido.")
+                    continue
+                }
+
                 println("Porcentaje de descuento (0 si no tiene):")
-                val descuento = scanner.nextLine().toDoubleOrNull() ?: 0.0
+                val descuentoInput = scanner.nextLine()
+                val descuento = descuentoInput.toDoubleOrNull() ?: 0.0
 
                 val nuevoId = (Repositorio.productos.maxByOrNull { it.id }?.id ?: 0) + 1
                 agregarProducto(Producto(nuevoId, nombre, precio, descuento, tipo))
-                println("Producto agregado.")
+                println("Producto agregado exitosamente.")
             }
             "2" -> {
                 println("ID del producto a modificar:")
-                val id = scanner.nextLine().toInt()
+                val idInput = scanner.nextLine()
+                val id = idInput.toIntOrNull()
+                if (id == null) {
+                    println("ID inválido.")
+                    continue
+                }
+
                 println("Nuevo nombre:")
                 val nuevoNombre = scanner.nextLine()
+
                 println("Nuevo precio:")
-                val nuevoPrecio = scanner.nextLine().toDouble()
+                val nuevoPrecioInput = scanner.nextLine()
+                val nuevoPrecio = nuevoPrecioInput.toDoubleOrNull()
+                if (nuevoPrecio == null) {
+                    println("Precio inválido.")
+                    continue
+                }
+
                 modificarProducto(id, nuevoNombre, nuevoPrecio)
             }
             "3" -> {
                 println("Productos actuales:")
                 Repositorio.productos.forEach { println(it) }
             }
-            "4" -> return
+            "4" -> {
+                println("Clientes actuales:")
+                Repositorio.clientes.forEach { println(it) }
+            }
+            "5" -> {
+                println("Ingrese el ID del cliente:")
+                val idInput = scanner.nextLine()
+                val id = idInput.toIntOrNull()
+                if (id == null) {
+                    println("ID inválido.")
+                    continue
+                }
+
+                val clienteBuscado = Repositorio.clientes.find { it.id == id }
+                if (clienteBuscado != null) {
+                    println("Nombre del cliente: ${clienteBuscado.nombre}")
+                    println("mail: ${clienteBuscado.email}")
+                    println("Teléfono: ${clienteBuscado.telefono}")
+                    println("Pedidos: ${clienteBuscado.pedidos}")
+                } else {
+                    println("Usuario no encontrado. ¿Desea crearlo? (s/n)")
+                    val confirmacion = scanner.nextLine().lowercase()
+                    if (confirmacion == "s") {
+                        crearUsuario(scanner)
+                    }
+                }
+            }
+            "6" -> {
+                println("Ingrese el ID del cliente a eliminar:")
+                val idInput = scanner.nextLine()
+                val id = idInput.toIntOrNull()
+                if (id == null) {
+                    println("ID inválido.")
+                    continue
+                }
+
+                val clienteBuscado = Repositorio.clientes.find { it.id == id }
+                if (clienteBuscado != null) {
+                    println("El cliente eliminar es: ${clienteBuscado.nombre} de id= ${clienteBuscado.id}")
+                    println("¿Está seguro que quiere eliminarlo? (s/n)")
+                    val confirmacion = scanner.nextLine().lowercase()
+                    if (confirmacion == "s") {
+                        eliminarCliente(clienteBuscado)
+                        println("Cliente eliminado exitosamente.")
+                    } else {
+                        println("Operación cancelada.")
+                    }
+                } else {
+                    println("Usuario no encontrado.")
+                }
+            }
+            "7" -> return
             else -> println("Opción inválida.")
         }
     }
 }
-
 // Funciones de Gestiones de Productos:
 
 fun modificarProducto(id: Int, nuevoNombre: String, nuevoPrecio: Double) {
@@ -219,4 +305,9 @@ fun agregarCliente(cliente: Cliente) {
     Repositorio.clientes.add(cliente)
 }
 
-fun buscarClientePorNombre(nombre: String) = Repositorio.clientes.find { it.nombre == nombre }
+fun buscarClientePorId(id: Int) = Repositorio.clientes.find { it.id == id }
+
+
+fun eliminarCliente(cliente: Cliente) {
+    Repositorio.clientes.remove(cliente)
+}
