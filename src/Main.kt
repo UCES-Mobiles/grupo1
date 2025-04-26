@@ -4,9 +4,25 @@ fun main() {
     val scanner = Scanner(System.`in`)
     println("Bienvenido al restaurante Zagaba.")
 
+    // Cargamos algunos productos al menú
+    agregarProducto(Producto(1, "Empanada", 500.0, 0.0, TipoProducto.ENTRADA))
+    agregarProducto(Producto(2, "Milanesa con papas", 2000.0, 0.0, TipoProducto.PLATO_PRINCIPAL))
+    agregarProducto(Producto(3, "Helado", 700.0, 0.0, TipoProducto.POSTRE,))
+    agregarProducto(Producto(4, "Gaseosa", 400.0, 0.0, TipoProducto.BEBIDA))
+
     // Cargamos un par de clientes
-    agregarCliente(Cliente(1, "Juan", "1122334455", "juan@gmail.com"))
-    agregarCliente(Cliente(2, "Ana", "1133445566", null))
+    agregarCliente(Cliente(1, "Juan Pérez", "1122334455", "juan@gmail.com"))
+    agregarCliente(Cliente(2, "Ana López", "1133445566", null))
+
+    Repositorio.clientes.add(
+        Cliente(
+            id = 0,
+            nombre = "admin",
+            telefono = "0000000000",
+            email = "admin@zagaba.com",
+            esAdmin = true
+        )
+    )
 
     while (true) {
         println(
@@ -31,6 +47,10 @@ fun main() {
     }
 }
 
+enum class TipoProducto {
+    ENTRADA, PLATO_PRINCIPAL, POSTRE, BEBIDA
+}
+
 enum class EstadoPedido {
     PENDIENTE, EN_PREPARACION, ENVIADO, ENTREGADO, CANCELADO
 }
@@ -39,7 +59,8 @@ data class Producto(
     val id: Int,
     var nombre: String,
     var precio: Double,
-    var porcentajeDescuento: Double = 0.0
+    var porcentajeDescuento: Double = 0.0,
+    val tipo: TipoProducto
 ) {
     fun precioFinal(): Double = precio * (1 - porcentajeDescuento / 100)
 }
@@ -114,8 +135,16 @@ fun logIn(scanner: Scanner) {
 
 object Repositorio {
     val clientes = mutableListOf<Cliente>()
+    val productos = mutableListOf<Producto>()
 }
 
+fun agregarProducto(producto: Producto) {
+    if (Repositorio.productos.any { it.id == producto.id }) {
+        println("Error: ya existe un producto con ID ${producto.id}")
+        return
+    }
+    Repositorio.productos.add(producto)
+}
 
 // gestion de clientes
 
