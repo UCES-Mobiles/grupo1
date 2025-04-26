@@ -4,50 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora/.idea/grupo1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Cliente.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/EstadoPedido.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/META-INF/1er parcial moviles1 - Barbieri-Gatti-Zamora.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/MainKt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Pedido$WhenMappings.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Pedido.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Producto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Repositorio.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/TipoProducto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/grupo1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/1er parcial moviles1 - Barbieri-Gatti-Zamora.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/1er parcial moviles1 - Barbieri-Gatti-Zamora/.idea/grupo1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Cliente.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/EstadoPedido.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/META-INF/grupo1.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido$WhenMappings.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Producto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/grupo1/TipoProducto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,12 +27,12 @@
     &quot;assignee&quot;: &quot;damianzamora&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/UCES-Mobiles/grupo1.git",
-    "accountId": "fe0df1a7-f5a2-4af0-ae38-e55e28e72689"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/UCES-Mobiles/grupo1.git&quot;,
+    &quot;accountId&quot;: &quot;fe0df1a7-f5a2-4af0-ae38-e55e28e72689&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -99,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging mbarbieri",
+    "git-widget-placeholder": "mbarbieri",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1",
@@ -151,7 +108,20 @@
       <option name="presentableId" value="Default" />
       <updated>1745624275808</updated>
     </task>
+    <task id="LOCAL-00001" summary="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú.">
+      <option name="closed" value="true" />
+      <created>1745694794789</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745694794789</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
