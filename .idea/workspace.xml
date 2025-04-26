@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora/.idea/grupo1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Cliente.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/EstadoPedido.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/META-INF/1er parcial moviles1 - Barbieri-Gatti-Zamora.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/MainKt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Pedido$WhenMappings.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Pedido.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Producto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/Repositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/1er parcial moviles1 - Barbieri-Gatti-Zamora/TipoProducto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/grupo1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/1er parcial moviles1 - Barbieri-Gatti-Zamora.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/1er parcial moviles1 - Barbieri-Gatti-Zamora/.idea/grupo1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Cliente.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/EstadoPedido.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/META-INF/grupo1.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido$WhenMappings.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Producto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/grupo1/TipoProducto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;searchQuery&quot;: &quot;develop&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;damianzamora&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;searchQuery&quot;: &quot;develop&quot;,
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;damianzamora&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/UCES-Mobiles/grupo1.git",
+    "accountId": "fe0df1a7-f5a2-4af0-ae38-e55e28e72689"
+  }
+}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2wF52e2rVfquza5h1ie6VMVG4cL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Unnamed.executor": "Run",
+    "Kotlin.Main.executor": "Run",
+    "Kotlin.MainKt (1).executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.Unnamed.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Merging mbarbieri",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1",
+    "onboarding.tips.debug.path": "C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1/1er parcial moviles1 - Barbieri-Gatti-Zamora/untitled/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\damia.DAMIAKD\OneDrive\Escritorio\UCES\Mobiles 1\grupo1" />
+      <recent name="C:\Users\damia.DAMIAKD\OneDrive\Escritorio\UCES\Mobiles 1\grupo1\1er parcial moviles1 - Barbieri-Gatti-Zamora" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="grupo1" />
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-24" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="grupo1" />
+      <shortenClasspath name="MANIFEST" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="" />
+      <created>1745624275808</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745624275808</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/1er parcial moviles1 - Barbieri-Gatti-Zamora/untitled/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
