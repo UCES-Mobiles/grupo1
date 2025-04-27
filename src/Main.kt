@@ -26,6 +26,7 @@ fun main() {
     agregarCliente(Cliente(1, "Juan","123", "1122334455", "juan@gmail.com", esAdmin = false))
     agregarCliente(Cliente(2, "Ana","456", "1133445566", null, esAdmin = false))
 
+
     while (true) {
         println(
             """
@@ -736,6 +737,7 @@ fun generarReportes(scanner: Scanner) {
                     if (Repositorio.pedidos.find { it.id == id } != null) {
                         println("Los pedidos de ${clienteBuscado.nombre} fueron: \n")
                         pedidosPorCliente(clienteBuscado.id)
+                        return
                     } else {
                         println("Ese usuario no tiene pedidos realizados.")
                         return
@@ -772,11 +774,11 @@ fun generarReportes(scanner: Scanner) {
 }
 
 fun pedidosPorCliente(clienteId: Int) =
-    Repositorio.pedidos.filter { it.cliente.id == clienteId }.sortedBy { it.fecha }
+    println(Repositorio.pedidos.filter { it.cliente.id == clienteId }.sortedBy { it.fecha })
 
 fun clientesConMultiplesPedidos() =
-    Repositorio.clientes.filter { it.pedidos.size > 1 }
+    println(Repositorio.clientes.filter { it.pedidos.size > 1 })
 
 fun totalRecaudado() =
-    Repositorio.pedidos.filter { it.estado == EstadoPedido.ENTREGADO }
-        .sumOf { it.montoTotal }
+    println(Repositorio.pedidos.filter { it.estado == EstadoPedido.ENTREGADO }
+        .sumOf { it.montoTotal })
