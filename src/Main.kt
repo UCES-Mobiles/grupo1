@@ -2,15 +2,14 @@ import java.util.Scanner
 
 fun main() {
     val scanner = Scanner(System.`in`)
-    println("Bienvenido al restaurante Zagaba.")
-
-    // Cargamos algunos productos al menú
+    println("Bienvenido al restaurante Zagaba...")
+    // Cargamos productos al menú
     agregarProducto(Producto(1, "Empanada", 500.0, 0.0, TipoProducto.ENTRADA))
     agregarProducto(Producto(2, "Milanesa con papas", 2000.0, 0.0, TipoProducto.PLATO_PRINCIPAL))
     agregarProducto(Producto(3, "Helado", 700.0, 0.0, TipoProducto.POSTRE))
     agregarProducto(Producto(4, "Gaseosa", 400.0, 0.0, TipoProducto.BEBIDA))
 
-    // Cargamos un par de clientes
+    // Cargamos clientes
     agregarCliente(Cliente(1, "Juan Pérez", "1122334455", "juan@gmail.com"))
     agregarCliente(Cliente(2, "Ana López", "1133445566", null))
 
@@ -97,7 +96,7 @@ data class Pedido(
     }
 }
 
-// creación de usuario
+// Creación de usuario
 
 fun crearUsuario(scanner: Scanner) {
     println("Ingrese su nombre completo:")
