@@ -128,7 +128,7 @@ fun logIn(scanner: Scanner) {
             if (cliente.esAdmin) {
                 menuAdmin(scanner)
             } else {
-                // -- FALTA HACER MENÚ CLIENTE --
+                // -- FALTA HACER MENÚ CLIENTE -
             }
         } else {
             println("Usuario no encontrado. ¿Desea crearlo? (s/n)")
