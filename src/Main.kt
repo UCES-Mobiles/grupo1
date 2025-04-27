@@ -553,14 +553,14 @@ fun menuAdmin(scanner: Scanner) {
     }
 }
 
-// crea repositorios de memoria
+//Crea repositorios de memoria
 
 object Repositorio {
     val clientes = mutableListOf<Cliente>()
     val productos = mutableListOf<Producto>()
 }
 
-// gestion de clientes
+//Gestion de clientes
 
 fun agregarCliente(cliente: Cliente) {
     Repositorio.clientes.add(cliente)
