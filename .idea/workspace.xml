@@ -6,12 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Cliente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuAdmin$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuAdmin$$inlined$sortedBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuCliente$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuCliente$$inlined$sortedBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Producto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
@@ -59,29 +61,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dzamora&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1/1er parcial moviles1 - Barbieri-Gatti-Zamora/untitled/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Unnamed.executor": "Run",
+    "Kotlin.Main.executor": "Run",
+    "Kotlin.MainKt (1).executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.Unnamed.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "mbarbieri",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/maria/IdeaProjects/parcial_moviles1_version_og",
+    "onboarding.tips.debug.path": "C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1/1er parcial moviles1 - Barbieri-Gatti-Zamora/untitled/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\damia.DAMIAKD\OneDrive\Escritorio\UCES\Mobiles 1\grupo1" />
