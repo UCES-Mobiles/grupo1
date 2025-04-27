@@ -100,6 +100,20 @@ fun crearUsuario(scanner: Scanner) {
     val telefono = scanner.nextLine()
     println("Ingrese su email (puede dejarlo vacío):")
     val email = scanner.nextLine().takeIf { it.isNotBlank() }
+    val nuevoId = (Repositorio.clientes.maxByOrNull { it.id }?.id ?: 0) + 1
+    val nuevoCliente = Cliente(nuevoId, nombre, telefono, email, mutableListOf())
+    agregarCliente(nuevoCliente)
+
+    println("Usuario creado exitosamente. Su ID de cliente es: ${nuevoCliente.id}")
+}
+
+fun crearUsuarioComoAdmin(scanner: Scanner) {
+    println("Ingrese su nombre completo:")
+    val nombre = scanner.nextLine()
+    println("Ingrese su teléfono:")
+    val telefono = scanner.nextLine()
+    println("Ingrese su email (puede dejarlo vacío):")
+    val email = scanner.nextLine().takeIf { it.isNotBlank() }
     var isAdmin = false
     println("¿Usuario admin? Ingrese (Y) o (N):")
     var isAdminInput = scanner.nextLine()
@@ -479,7 +493,8 @@ fun menuAdmin(scanner: Scanner) {
             |5. Ver Clientes
             |6. Buscar Cliente
             |7. Eliminar Cliente
-            |8. Volver al menú principal
+            |8. Agregar usuario admin
+            |9. Volver al menú principal
             |Seleccione una opción:
             """.trimMargin()
         )
@@ -551,7 +566,8 @@ fun menuAdmin(scanner: Scanner) {
                     println("Usuario no encontrado.")
                 }
             }
-            "8" -> return
+            "8" -> {crearUsuarioComoAdmin(scanner) }
+            "9" -> return
             else -> println("Opción inválida")
         }
     }
