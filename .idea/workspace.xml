@@ -6,15 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/EstadoPedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/EstadoPedido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/META-INF/grupo1.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/META-INF/grupo1.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Pedido$WhenMappings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido$WhenMappings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Producto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/TipoProducto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/TipoProducto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -39,12 +35,12 @@
     &quot;assignee&quot;: &quot;damianzamora&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/UCES-Mobiles/grupo1.git&quot;,
-    &quot;accountId&quot;: &quot;fe0df1a7-f5a2-4af0-ae38-e55e28e72689&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/UCES-Mobiles/grupo1.git",
+    "accountId": "abf1f032-f314-4f1a-a5c4-c13dfa3a0134"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -68,7 +64,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Kanjo-Branch",
+    "git-widget-placeholder": "dzamora",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1",
