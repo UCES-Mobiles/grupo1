@@ -444,7 +444,7 @@ fun eliminarProductoMenu(scanner: Scanner) {
 
     println("¿Está seguro que desea eliminar el producto ${producto.nombre} (ID: ${producto.id})? (s/n)")
     when (scanner.nextLine().lowercase()) {
-        "y" -> {
+        "s" -> {
             Repositorio.productos.remove(producto)
             println("Producto eliminado exitosamente")
         }
