@@ -167,15 +167,15 @@ fun agregarProductoMenu(scanner: Scanner) {
         return
     }
 
-    val precio = ingresarPrecioConValidacion(scanner) ?: return
-    val tipo = seleccionarTipoProducto(scanner) ?: return
-    val descuento = ingresarDescuentoConValidacion(scanner) ?: return
+    val precio = ingresarPrecioConValidacion(scanner)
+    val tipo = seleccionarTipoProducto(scanner)
+    val descuento = ingresarDescuentoConValidacion(scanner)
     val nuevoId = (Repositorio.productos.maxByOrNull { it.id }?.id ?: 0) + 1
     agregarProducto(Producto(nuevoId, nombre, precio, descuento, tipo))
     println("✅ Producto agregado exitosamente (ID: $nuevoId)")
 }
 
-private fun ingresarPrecioConValidacion(scanner: Scanner): Double? {
+private fun ingresarPrecioConValidacion(scanner: Scanner): Double {
     var precio: Double?
     do {
         println("Precio del producto:")
@@ -207,7 +207,7 @@ private fun ingresarPrecioConValidacion(scanner: Scanner): Double? {
     return precio
 }
 
-private fun seleccionarTipoProducto(scanner: Scanner): TipoProducto? {
+private fun seleccionarTipoProducto(scanner: Scanner): TipoProducto {
     while (true) {
         println("\nSeleccione el tipo de producto:")
         TipoProducto.entries.forEachIndexed { index, tipo ->
@@ -230,7 +230,7 @@ private fun seleccionarTipoProducto(scanner: Scanner): TipoProducto? {
     }
 }
 
-private fun ingresarDescuentoConValidacion(scanner: Scanner): Double? {
+private fun ingresarDescuentoConValidacion(scanner: Scanner): Double {
     while (true) {
         println("Porcentaje de descuento (0-100%):")
         val input = scanner.nextLine()
@@ -289,7 +289,7 @@ fun buscarProductosMenu(scanner: Scanner): Producto? {
                     return null
                 }
                 Repositorio.productos.sortedBy { it.id }.forEachIndexed { index, producto ->
-                    println("${index + 1}. ${producto.toString()}")
+                    println("${index + 1}. $producto")
                 }
                 println("Ingrese el número del producto:")
                 val index = scanner.nextLine().toIntOrNull()?.minus(1) ?: return null
@@ -318,7 +318,7 @@ fun buscarProductosMenu(scanner: Scanner): Producto? {
                     return null
                 }
                 resultados.forEachIndexed { index, producto ->
-                    println("${index + 1}. ${producto.toString()}")
+                    println("${index + 1}. $producto")
                 }
                 println("Ingrese el número del producto:")
                 val index = scanner.nextLine().toIntOrNull()?.minus(1) ?: return null
@@ -339,7 +339,7 @@ fun buscarProductosMenu(scanner: Scanner): Producto? {
                     return null
                 }
                 resultados.forEachIndexed { index, producto ->
-                    println("${index + 1}. ${producto.toString()}")
+                    println("${index + 1}. $producto")
                 }
                 println("Ingrese el número del producto:")
                 val index = scanner.nextLine().toIntOrNull()?.minus(1) ?: return null
@@ -359,7 +359,7 @@ fun buscarProductosMenu(scanner: Scanner): Producto? {
                     return null
                 }
                 resultados.forEachIndexed { index, producto ->
-                    println("${index + 1}. ${producto.toString()}")
+                    println("${index + 1}. $producto")
                 }
                 println("Ingrese el número del producto:")
                 val index = scanner.nextLine().toIntOrNull()?.minus(1) ?: return null
@@ -407,27 +407,22 @@ fun modificarProductoMenu(scanner: Scanner) {
             }
             "2" -> {
                 val nuevoPrecio = ingresarPrecioConValidacion(scanner)
-                if (nuevoPrecio != null) {
                     cambios.precio = nuevoPrecio
                     cambiosRealizados = true
                     println("✅ Precio actualizado (pendiente de guardar)")
-                }
+
             }
             "3" -> {
                 val nuevoDescuento = ingresarDescuentoConValidacion(scanner)
-                if (nuevoDescuento != null) {
                     cambios.porcentajeDescuento = nuevoDescuento
                     cambiosRealizados = true
                     println("✅ Descuento actualizado (pendiente de guardar)")
-                }
             }
             "4" -> {
                 val nuevoTipo = seleccionarTipoProducto(scanner)
-                if (nuevoTipo != null) {
                     cambios.tipo = nuevoTipo
                     cambiosRealizados = true
                     println("✅ Tipo actualizado (pendiente de guardar)")
-                }
             }
             "5" -> {
                 if (cambiosRealizados) {
@@ -522,6 +517,7 @@ fun menuAdmin(scanner: Scanner) {
     while (true) {
         println(
             """
+            
             |--- Administración Zagaba ---
             |1. Agregar Producto
             |2. Modificar Producto
@@ -591,8 +587,8 @@ fun menuAdmin(scanner: Scanner) {
                 }
 
                 val clienteBuscado = Repositorio.clientes.find { it.id == id }
-                if (clienteBuscado != null) {
-                    println("El cliente eliminar es: ${clienteBuscado.nombre} de id= ${clienteBuscado.id}")
+                if (clienteBuscado != null && !clienteBuscado.esAdmin) {
+                    println("El cliente a eliminar es: ${clienteBuscado.nombre} de id= ${clienteBuscado.id}")
                     println("¿Está seguro que quiere eliminarlo? (s/n)")
                     val confirmacion = scanner.nextLine().lowercase()
                     if (confirmacion == "s") {
@@ -602,10 +598,10 @@ fun menuAdmin(scanner: Scanner) {
                         println("Operación cancelada.")
                     }
                 } else {
-                    println("Usuario no encontrado.")
+                    println("ID inválido.")
                 }
             }
-            "8" -> {crearUsuarioComoAdmin(scanner) }
+            "8" -> {crearUsuarioComoAdmin(scanner)}
             "9" -> {generarReportes(scanner)}
             "10" -> {cambiarEstadoPedido(scanner)}
             "11" -> return
@@ -672,19 +668,25 @@ fun hacerPedido(scanner: Scanner, cliente: Cliente) {
         Repositorio.productos.find { it.id == id }
     }
 
-    if (productosSeleccionados.isEmpty()) {
-        println("⚠️ No se encontraron productos válidos.")
-        return
-    }
-
-    // Mostrar "Ticket de compra"
+// Mostrar Ticket de compra
     println("\n --- Ticket de Compra ---")
     productosSeleccionados.forEach {
         println("${it.nombre} - \$${"%.2f".format(it.precioFinal())}")
     }
-    val total = productosSeleccionados.sumOf { it.precioFinal() }
+
+// Aplicar descuento especial si corresponde
+    val descuentoEspecial = calcularDescuentoEspecial(cliente)
+
+    val totalSinDescuento = productosSeleccionados.sumOf { it.precioFinal() }
+    val totalConDescuento = totalSinDescuento * (1 - descuentoEspecial / 100)
+
     println("-----------------------------")
-    println("Total a pagar: \$${"%.2f".format(total)}")
+    println("Subtotal: \$${"%.2f".format(totalSinDescuento)}")
+    if (descuentoEspecial > 0.0) {
+        println("🎉 Descuento aplicado: -${descuentoEspecial.toInt()}%")
+    }
+    println("Total a pagar: \$${"%.2f".format(totalConDescuento)}")
+
 
     // Confirmación de compra
     println("\n¿Desea confirmar el pedido? (s/n)")
@@ -716,6 +718,12 @@ fun imprimirTicket(pedido: Pedido) {
     println("---------------------------")
     println("Total pagado: \$${"%.2f".format(pedido.montoTotal)}")
     println("===========================\n")
+}
+
+//función para calcular descuentos
+fun calcularDescuentoEspecial(cliente: Cliente): Double {
+    val pedidosNoCancelados = cliente.pedidos.count { it.estado != EstadoPedido.CANCELADO }
+    return if ((pedidosNoCancelados + 1) % 3 == 0) 10.0 else 0.0
 }
 
 // funciones para cancelar un pedido
