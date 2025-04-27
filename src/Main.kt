@@ -176,36 +176,26 @@ fun agregarProductoMenu(scanner: Scanner) {
 }
 
 private fun ingresarPrecioConValidacion(scanner: Scanner): Double {
-    var precio: Double?
-    do {
+    while (true) {
         println("Precio del producto:")
         val input = scanner.nextLine()
 
-        precio = input.toDoubleOrNull()
-        if (precio == null) {
-            println("⚠️ Error: Ingrese un valor numérico válido.")
-            continue
-        }
+        val precio = input.toDoubleOrNull()
 
-        if (precio < 0) {
-            println("⚠️ Advertencia: Está ingresando un valor negativo.")
-            println("¿Desea continuar? (Y/N)")
-            when (scanner.nextLine().trim().lowercase()) {
-                "y" -> return precio
-                "n" -> {
-                    precio = null
-                    continue
-                }
-                else -> {
-                    println("Opción no válida. Volviendo a solicitar precio.")
-                    precio = null
-                }
+        when {
+            precio == null -> {
+                println("⚠️ Error: Ingrese un valor numérico válido.")
+            }
+            precio < 0 -> {
+                println("⚠️ Error: El precio no puede ser negativo. Intente nuevamente.")
+            }
+            else -> {
+                return precio // Solo sale del bucle con un valor válido
             }
         }
-    } while (precio == null)
-
-    return precio
+    }
 }
+
 
 private fun seleccionarTipoProducto(scanner: Scanner): TipoProducto {
     while (true) {
