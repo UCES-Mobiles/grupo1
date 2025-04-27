@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="">
+    <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,22 +14,27 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "searchQuery": "develop",
-      "state": "OPEN",
-      "assignee": "damianzamora"
+      &quot;searchQuery&quot;: &quot;develop&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;damianzamora&quot;
     }
   ],
-  "lastFilter": {
-    "searchQuery": "develop",
-    "state": "OPEN",
-    "assignee": "damianzamora"
+  &quot;lastFilter&quot;: {
+    &quot;searchQuery&quot;: &quot;develop&quot;,
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;damianzamora&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/UCES-Mobiles/grupo1.git&quot;,
@@ -50,29 +52,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Kanjo-Branch&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1/1er parcial moviles1 - Barbieri-Gatti-Zamora/untitled/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Unnamed.executor": "Run",
+    "Kotlin.Main.executor": "Run",
+    "Kotlin.MainKt (1).executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.Unnamed.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "mbarbieri",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/maria/IdeaProjects/parcial_moviles1_version_og",
+    "onboarding.tips.debug.path": "C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1/1er parcial moviles1 - Barbieri-Gatti-Zamora/untitled/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\damia.DAMIAKD\OneDrive\Escritorio\UCES\Mobiles 1\grupo1" />
@@ -114,7 +116,28 @@
       <option name="presentableId" value="Default" />
       <updated>1745624275808</updated>
     </task>
+    <task id="LOCAL-00001" summary="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú.">
+      <option name="closed" value="true" />
+      <created>1745694794789</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745694794789</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú.">
+      <option name="closed" value="true" />
+      <created>1745695507699</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745695507699</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
