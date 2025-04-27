@@ -668,19 +668,25 @@ fun hacerPedido(scanner: Scanner, cliente: Cliente) {
         Repositorio.productos.find { it.id == id }
     }
 
-    if (productosSeleccionados.isEmpty()) {
-        println("⚠️ No se encontraron productos válidos.")
-        return
-    }
-
-    // Mostrar "Ticket de compra"
+// Mostrar Ticket de compra
     println("\n --- Ticket de Compra ---")
     productosSeleccionados.forEach {
         println("${it.nombre} - \$${"%.2f".format(it.precioFinal())}")
     }
-    val total = productosSeleccionados.sumOf { it.precioFinal() }
+
+// Aplicar descuento especial si corresponde
+    val descuentoEspecial = calcularDescuentoEspecial(cliente)
+
+    val totalSinDescuento = productosSeleccionados.sumOf { it.precioFinal() }
+    val totalConDescuento = totalSinDescuento * (1 - descuentoEspecial / 100)
+
     println("-----------------------------")
-    println("Total a pagar: \$${"%.2f".format(total)}")
+    println("Subtotal: \$${"%.2f".format(totalSinDescuento)}")
+    if (descuentoEspecial > 0.0) {
+        println("🎉 Descuento aplicado: -${descuentoEspecial.toInt()}%")
+    }
+    println("Total a pagar: \$${"%.2f".format(totalConDescuento)}")
+
 
     // Confirmación de compra
     println("\n¿Desea confirmar el pedido? (s/n)")
@@ -712,6 +718,12 @@ fun imprimirTicket(pedido: Pedido) {
     println("---------------------------")
     println("Total pagado: \$${"%.2f".format(pedido.montoTotal)}")
     println("===========================\n")
+}
+
+//función para calcular descuentos
+fun calcularDescuentoEspecial(cliente: Cliente): Double {
+    val pedidosNoCancelados = cliente.pedidos.count { it.estado != EstadoPedido.CANCELADO }
+    return if ((pedidosNoCancelados + 1) % 3 == 0) 10.0 else 0.0
 }
 
 // funciones para cancelar un pedido
