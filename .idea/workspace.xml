@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuAdmin$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuAdmin$$inlined$sortedBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuCliente$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuCliente$$inlined$sortedBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Producto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
