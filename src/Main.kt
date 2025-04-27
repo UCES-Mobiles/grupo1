@@ -1,27 +1,30 @@
 import java.util.Scanner
 
+enum class TipoProducto {
+    ENTRADA, PLATO_PRINCIPAL, POSTRE, BEBIDA
+}
+
+enum class EstadoPedido {
+    PENDIENTE, EN_PREPARACION, ENVIADO, ENTREGADO, CANCELADO
+}
+
 fun main() {
     val scanner = Scanner(System.`in`)
     println("Bienvenido al restaurante Zagaba...")
-    // Cargamos productos al menú
+
+    // Ingreso de productos
     agregarProducto(Producto(1, "Empanada", 500.0, 0.0, TipoProducto.ENTRADA))
     agregarProducto(Producto(2, "Milanesa con papas", 2000.0, 0.0, TipoProducto.PLATO_PRINCIPAL))
     agregarProducto(Producto(3, "Helado", 700.0, 0.0, TipoProducto.POSTRE))
     agregarProducto(Producto(4, "Gaseosa", 400.0, 0.0, TipoProducto.BEBIDA))
 
-    // Cargamos clientes
-    agregarCliente(Cliente(1, "Juan Pérez", "1122334455", "juan@gmail.com"))
-    agregarCliente(Cliente(2, "Ana López", "1133445566", null))
+    // Ingreso de usuarios
 
-    Repositorio.clientes.add(
-        Cliente(
-            id = 0,
-            nombre = "admin",
-            telefono = "0000000000",
-            email = "admin@zagaba.com",
-            esAdmin = true
-        )
-    )
+    //Admin
+    agregarCliente(Cliente(0, "admin", "0000000000", "admin@zagaba.com", esAdmin = true))
+    //Clientes
+    agregarCliente(Cliente(1, "Juan Pérez", "1122334455", "juan@gmail.com", esAdmin = false))
+    agregarCliente(Cliente(2, "Ana López", "1133445566", null, esAdmin = false))
 
     while (true) {
         println(
@@ -44,14 +47,6 @@ fun main() {
             else -> println("Opción inválida. Por favor intente nuevamente.")
         }
     }
-}
-
-enum class TipoProducto {
-    ENTRADA, PLATO_PRINCIPAL, POSTRE, BEBIDA
-}
-
-enum class EstadoPedido {
-    PENDIENTE, EN_PREPARACION, ENVIADO, ENTREGADO, CANCELADO
 }
 
 data class Producto(
@@ -123,8 +118,7 @@ fun crearUsuario(scanner: Scanner) {
     println("Usuario creado exitosamente. Su ID de cliente es: ${nuevoCliente.id}")
 }
 
-// funcion de login
-
+// Funcion de login
 fun logIn(scanner: Scanner) {
     println("Ingrese su id de usuario:")
     val idInput = scanner.nextLine()
@@ -138,7 +132,7 @@ fun logIn(scanner: Scanner) {
             if (cliente.esAdmin) {
                 menuAdmin(scanner)
             } else {
-                println("-- FALTA HACER MENÚ CLIENTE -")
+                menuCliente(scanner, cliente)
             }
         } else {
             println("Usuario no encontrado. ¿Desea crearlo? (s/n)")
@@ -563,11 +557,119 @@ fun menuAdmin(scanner: Scanner) {
     }
 }
 
+// Menu cliente
+
+fun menuCliente(scanner: Scanner, cliente: Cliente) {
+    while (true) {
+        println(
+            """
+            |--- Menú Cliente ---
+            |1. Hacer un nuevo pedido
+            |2. Ver mis pedidos
+            |3. Cancelar un pedido
+            |4. Cerrar sesión
+            |Seleccione una opción:
+            """.trimMargin()
+        )
+
+        when (scanner.nextLine().trim()) {
+            "1" -> hacerPedido(scanner, cliente)
+            "2" -> {
+                if (cliente.pedidos.isEmpty()) {
+                    println("No tiene pedidos registrados.")
+                } else {
+                    println("Pedidos realizados:")
+                    cliente.pedidos.sortedBy { it.fecha }.forEach { println(it) }
+                }
+            }
+            "3" -> cancelarPedido(scanner, cliente)
+            "4" -> {
+                println("Sesión cerrada. Hasta luego, ${cliente.nombre}.")
+                return
+            }
+            else -> println("Opción inválida.")
+        }
+    }
+}
+
+// funcion para hacer los pedidos
+
+fun hacerPedido(scanner: Scanner, cliente: Cliente) {
+    println("Productos disponibles:")
+    Repositorio.productos.forEach { println("${it.id}. ${it.nombre} - \$${it.precioFinal()} (${it.tipo})") }
+
+    println("Ingrese los IDs de los productos que desea (separados por coma):")
+    val ids = scanner.nextLine()
+        .split(",")
+        .mapNotNull { it.trim().toIntOrNull() }
+
+    if (ids.isEmpty()) {
+        println("No se seleccionó ningún producto válido.")
+        return
+    }
+
+    val fecha = java.time.LocalDate.now().toString()
+    try {
+        val pedido = tomarPedido(cliente.id, ids, fecha)
+        println("Pedido creado con éxito:\n$pedido")
+    } catch (e: Exception) {
+        println("Error al crear el pedido: ${e.message}")
+    }
+}
+
+// funciones para cancelar un pedido
+
+fun Pedido.cancelar() {
+    if (estado == EstadoPedido.ENTREGADO || estado == EstadoPedido.CANCELADO) {
+        throw IllegalStateException("El pedido ya fue ${estado.name.lowercase()}, no se puede cancelar.")
+    }
+    estado = EstadoPedido.CANCELADO
+}
+
+fun cancelarPedido(scanner: Scanner, cliente: Cliente) {
+    val pedidosActivos = cliente.pedidos.filter { it.estado != EstadoPedido.ENTREGADO && it.estado != EstadoPedido.CANCELADO }
+
+    if (pedidosActivos.isEmpty()) {
+        println("No tiene pedidos activos para cancelar.")
+        return
+    }
+
+    println("Pedidos activos:")
+    pedidosActivos.forEach { println("ID: ${it.id} - ${it.productos.joinToString { p -> p.nombre }} (Estado: ${it.estado})") }
+
+    println("Ingrese el ID del pedido que desea cancelar:")
+    val id = scanner.nextLine().toIntOrNull()
+
+    val pedido = pedidosActivos.find { it.id == id }
+    if (pedido != null) {
+        try {
+            pedido.cancelar()
+            println("Pedido cancelado exitosamente.")
+        } catch (e: Exception) {
+            println("No se pudo cancelar el pedido: ${e.message}")
+        }
+    } else {
+        println("Pedido no encontrado o ya fue entregado/cancelado.")
+    }
+}
+
+fun tomarPedido(clienteId: Int, productosIds: List<Int>, fecha: String): Pedido {
+    val cliente = Repositorio.clientes.find { it.id == clienteId } ?: throw IllegalArgumentException("Cliente no encontrado")
+    val productos = productosIds.map { id ->
+        Repositorio.productos.find { it.id == id } ?: throw IllegalArgumentException("Producto $id no existe")
+    }
+    val pedido = Pedido(id = Repositorio.pedidos.size + 1, cliente = cliente, productos = productos, fecha = fecha)
+    cliente.pedidos.add(pedido)
+    Repositorio.pedidos.add(pedido)
+    return pedido
+}
+
 //Crea repositorios de memoria
 
 object Repositorio {
     val clientes = mutableListOf<Cliente>()
     val productos = mutableListOf<Producto>()
+    val pedidos = mutableListOf<Pedido>()
 }
 
 //Gestion de clientes
