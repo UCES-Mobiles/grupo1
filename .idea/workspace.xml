@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0693ee47-e4f2-4113-801d-8133338a5907" name="Changes" comment="Modifiqué el menú de admin, agregando las opciones 4, 5 y 6. Retoqué el login para que te pida el nro de id para entrar, me pareció más prolijo porque podría haber usuarios con el mismo nombre.&#10;Agregué la función eliminarCliente para poder usarla en el punto 6 del menú.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$buscarProductosMenu$$inlined$sortedBy$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuAdmin$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuAdmin$$inlined$sortedBy$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuCliente$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt$menuCliente$$inlined$sortedBy$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/MainKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Pedido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/grupo1/Repositorio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +21,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -32,7 +45,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/UCES-Mobiles/grupo1.git&quot;,
-    &quot;accountId&quot;: &quot;fe0df1a7-f5a2-4af0-ae38-e55e28e72689&quot;
+    &quot;accountId&quot;: &quot;abf1f032-f314-4f1a-a5c4-c13dfa3a0134&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -58,7 +71,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;mbarbieri&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dzamora&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/damia.DAMIAKD/OneDrive/Escritorio/UCES/Mobiles 1/grupo1&quot;,
