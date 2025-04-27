@@ -105,9 +105,19 @@ fun crearUsuario(scanner: Scanner) {
     val telefono = scanner.nextLine()
     println("Ingrese su email (puede dejarlo vacío):")
     val email = scanner.nextLine().takeIf { it.isNotBlank() }
+    var isAdmin = false
+    println("¿Usuario admin? Ingrese (Y) o (N):")
+    var isAdminInput = scanner.nextLine()
+    while (isAdminInput != "Y" && isAdminInput != "N" && isAdminInput != "y" && isAdminInput != "n" ) {
+        println("Entrada inválida. Por favor, ingrese Y o N:")
+        isAdminInput = scanner.nextLine().uppercase()
+    }
+    if (isAdminInput == "Y" || isAdminInput == "y") {
+        isAdmin = true
+    }
 
     val nuevoId = (Repositorio.clientes.maxByOrNull { it.id }?.id ?: 0) + 1
-    val nuevoCliente = Cliente(nuevoId, nombre, telefono, email)
+    val nuevoCliente = Cliente(nuevoId, nombre, telefono, email, mutableListOf() , isAdmin)
     agregarCliente(nuevoCliente)
 
     println("Usuario creado exitosamente. Su ID de cliente es: ${nuevoCliente.id}")
@@ -128,7 +138,7 @@ fun logIn(scanner: Scanner) {
             if (cliente.esAdmin) {
                 menuAdmin(scanner)
             } else {
-                // -- FALTA HACER MENÚ CLIENTE -
+                println("-- FALTA HACER MENÚ CLIENTE -")
             }
         } else {
             println("Usuario no encontrado. ¿Desea crearlo? (s/n)")
