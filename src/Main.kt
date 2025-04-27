@@ -21,10 +21,10 @@ fun main() {
     // Ingreso de usuarios
 
     //Admin
-    agregarCliente(Cliente(0, "admin", "0000000000", "admin@zagaba.com", esAdmin = true))
+    agregarCliente(Cliente(0, "admin","0", "0000000000", "admin@zagaba.com", esAdmin = true))
     //Clientes
-    agregarCliente(Cliente(1, "Juan Pérez", "1122334455", "juan@gmail.com", esAdmin = false))
-    agregarCliente(Cliente(2, "Ana López", "1133445566", null, esAdmin = false))
+    agregarCliente(Cliente(1, "Juan","123", "1122334455", "juan@gmail.com", esAdmin = false))
+    agregarCliente(Cliente(2, "Ana","456", "1133445566", null, esAdmin = false))
 
     while (true) {
         println(
@@ -62,6 +62,7 @@ data class Producto(
 data class Cliente(
     val id: Int,
     val nombre: String,
+    val cont: String, // contraseña del usuario
     val telefono: String,
     val email: String?,
     val pedidos: MutableList<Pedido> = mutableListOf(),
@@ -94,22 +95,26 @@ data class Pedido(
 // Creación de usuario
 
 fun crearUsuario(scanner: Scanner) {
-    println("Ingrese su nombre completo:")
+    println("Ingrese su nombre de usuario:")
     val nombre = scanner.nextLine()
+    println("Ingrese su contraseña:")
+    val cont = scanner.nextLine()
     println("Ingrese su teléfono:")
     val telefono = scanner.nextLine()
     println("Ingrese su email (puede dejarlo vacío):")
     val email = scanner.nextLine().takeIf { it.isNotBlank() }
     val nuevoId = (Repositorio.clientes.maxByOrNull { it.id }?.id ?: 0) + 1
-    val nuevoCliente = Cliente(nuevoId, nombre, telefono, email, mutableListOf())
+    val nuevoCliente = Cliente(nuevoId, nombre,cont, telefono, email, mutableListOf())
     agregarCliente(nuevoCliente)
 
     println("Usuario creado exitosamente. Su ID de cliente es: ${nuevoCliente.id}")
 }
 
 fun crearUsuarioComoAdmin(scanner: Scanner) {
-    println("Ingrese su nombre completo:")
+    println("Ingrese su nombre de usuario:")
     val nombre = scanner.nextLine()
+    println("Ingrese su contraseña:")
+    val cont = scanner.nextLine()
     println("Ingrese su teléfono:")
     val telefono = scanner.nextLine()
     println("Ingrese su email (puede dejarlo vacío):")
@@ -126,7 +131,7 @@ fun crearUsuarioComoAdmin(scanner: Scanner) {
     }
 
     val nuevoId = (Repositorio.clientes.maxByOrNull { it.id }?.id ?: 0) + 1
-    val nuevoCliente = Cliente(nuevoId, nombre, telefono, email, mutableListOf() , isAdmin)
+    val nuevoCliente = Cliente(nuevoId, nombre, cont, telefono, email, mutableListOf() , isAdmin)
     agregarCliente(nuevoCliente)
 
     println("Usuario creado exitosamente. Su ID de cliente es: ${nuevoCliente.id}")
@@ -134,28 +139,29 @@ fun crearUsuarioComoAdmin(scanner: Scanner) {
 
 // Funcion de login
 fun logIn(scanner: Scanner) {
-    println("Ingrese su id de usuario:")
-    val idInput = scanner.nextLine()
-    val id = idInput.toIntOrNull()
-    if (id == null) {
-        println("ID inválido.")
-    } else {
-        val cliente = buscarClientePorId(id)
-        if (cliente != null) {
-            println("¡Bienvenido, ${cliente.nombre}!")
-            if (cliente.esAdmin) {
-                menuAdmin(scanner)
-            } else {
-                menuCliente(scanner, cliente)
-            }
-        } else {
-            println("Usuario no encontrado. ¿Desea crearlo? (s/n)")
-            if (scanner.nextLine().lowercase() == "s") {
-                crearUsuario(scanner)
-            }
-        }
+    println("Ingrese su nombre de usuario:")
+    val nombre = scanner.nextLine()
+
+    println("Ingrese su contraseña:")
+    val cont = scanner.nextLine()
+
+    val cliente = Repositorio.clientes.find {
+        it.nombre.trim().lowercase() == nombre.trim().lowercase() && it.cont == cont
     }
 
+    if (cliente != null) {
+        println("¡Bienvenido, ${cliente.nombre}!")
+        if (cliente.esAdmin) {
+            menuAdmin(scanner)
+        } else {
+            menuCliente(scanner, cliente)
+        }
+    } else {
+        println("Nombre de usuario o contraseña incorrectos. ¿Desea crear un nuevo usuario? (s/n)")
+        if (scanner.nextLine().lowercase() == "s") {
+            crearUsuario(scanner)
+        }
+    }
 }
 
 // --- Funciones de Productos ---
@@ -494,7 +500,8 @@ fun menuAdmin(scanner: Scanner) {
             |6. Buscar Cliente
             |7. Eliminar Cliente
             |8. Agregar usuario admin
-            |9. Volver al menú principal
+            |9. Generar reportes
+            |10. Volver al menú principal
             |Seleccione una opción:
             """.trimMargin()
         )
@@ -567,7 +574,8 @@ fun menuAdmin(scanner: Scanner) {
                 }
             }
             "8" -> {crearUsuarioComoAdmin(scanner) }
-            "9" -> return
+            "9" -> {generarReportes(scanner)}
+            "10" -> return
             else -> println("Opción inválida")
         }
     }
@@ -694,9 +702,81 @@ fun agregarCliente(cliente: Cliente) {
     Repositorio.clientes.add(cliente)
 }
 
-fun buscarClientePorId(id: Int) = Repositorio.clientes.find { it.id == id }
-
-
 fun eliminarCliente(cliente: Cliente) {
     Repositorio.clientes.remove(cliente)
 }
+
+// funciones para generar reportes
+
+fun generarReportes(scanner: Scanner) {
+    println(
+        """
+            |--- Reportes del negocio ---
+            |1. Ver los pedidos de un cliente
+            |2. Ver clientes con varios pedidos
+            |3. Total recaudado
+            |Seleccione una opción:
+            """.trimMargin()
+    )
+
+    when (scanner.nextLine().trim()) {
+        "1" -> {
+            while (true) {
+                println("Ingrese el ID del cliente:")
+                val idInput = scanner.nextLine()
+                val id = idInput.toIntOrNull()
+
+                if (id == null) {
+                    println("ID inválido.")
+                    continue
+                }
+
+                val clienteBuscado = Repositorio.clientes.find { it.id == id }
+                if (clienteBuscado != null) {
+                    if (Repositorio.pedidos.find { it.id == id } != null) {
+                        println("Los pedidos de ${clienteBuscado.nombre} fueron: \n")
+                        pedidosPorCliente(clienteBuscado.id)
+                    } else {
+                        println("Ese usuario no tiene pedidos realizados.")
+                        return
+                    }
+                }   else {
+                    println("Usuario no encontrado.")
+                    return
+                }
+            }
+        }
+
+        "2" -> {
+            if (Repositorio.pedidos.isEmpty()) {
+                println("No hubieron pedidos realizados hasta el momento.")
+                return
+            } else {
+                println("Clientes con múltiples pedidos:\n")
+                clientesConMultiplesPedidos()
+                return
+            }
+        }
+        "3" -> {
+            if (Repositorio.pedidos.isEmpty()) {
+                println("No hubieron pedidos entregados hasta el momento.")
+                return
+            } else {
+                println("Total recaudado: ")
+                totalRecaudado()
+                return
+            }
+        }
+        else -> println("Opción inválida.")
+    }
+}
+
+fun pedidosPorCliente(clienteId: Int) =
+    Repositorio.pedidos.filter { it.cliente.id == clienteId }.sortedBy { it.fecha }
+
+fun clientesConMultiplesPedidos() =
+    Repositorio.clientes.filter { it.pedidos.size > 1 }
+
+fun totalRecaudado() =
+    Repositorio.pedidos.filter { it.estado == EstadoPedido.ENTREGADO }
+        .sumOf { it.montoTotal }
